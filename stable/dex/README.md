@@ -67,6 +67,7 @@ Parameters introduced starting from v2
 | `certs.web.pod.annotations` | Annotations for the pod created by the `web-certs` job | `{}` |
 | `config.connectors` | Maps to the dex config `connectors` dict param | `{}` |
 | `config.enablePasswordDB` | Maps to the dex config `enablePasswordDB` param | `true` |
+| `config.frontend` | Maps to the dex config `frontend` dict param | `""` |
 | `config.grpc.address` | dex grpc listen address | `127.0.0.1` |
 | `config.grpc.tlsCert` | Maps to the dex config `grpc.tlsCert` param | `/etc/dex/tls/grpc/server/tls.crt` |
 | `config.grpc.tlsClientCA` | Maps to the dex config `grpc.tlsClientCA` param | `/etc/dex/tls/grpc/ca/tls.crt` |
@@ -81,6 +82,9 @@ Parameters introduced starting from v2
 | `config.web.address` | dex http/https listen address | `0.0.0.0` |
 | `config.web.tlsCert` | Maps to the dex config `web.tlsCert` param | `/etc/dex/tls/https/server/tls.crt` |
 | `config.web.tlsKey` | Maps to the dex config `web.tlsKey` param | `/etc/dex/tls/https/server/tls.key` |
+| `config.expiry.signingKeys` | Maps to the dex config `expiry.signingKeys` param | `6h` |
+| `config.expiry.idTokens` | Maps to the dex config `expiry.idTokens` param | `24h` |
+| `crd.present` | Whether dex's CRDs are already present (if not cluster role and cluster role binding will be created to enable dex to create them). Depends on `rbac.create` | `false` |
 | `grpc` | Enable dex grpc endpoint | `true` |
 | `https` | Enable TLS termination for the dex http endpoint | `false` |
 | `ports.grpc.containerPort` | grpc port listened by the dex | `5000` |
@@ -89,6 +93,7 @@ Parameters introduced starting from v2
 | `ports.web.containerPort` | http/https port listened by the dex | `5556` |
 | `ports.web.nodePort` | K8S Service node port for the dex http/https listener | `32000` |
 | `ports.web.servicePort` | K8S Service port for the dex http/https listener | `32000` |
+| `rbac.create` | If `true`, create & use RBAC resources | `true` |
 | `service.loadBalancerIP` | IP override for K8S LoadBalancer Service | `""` |
 
 

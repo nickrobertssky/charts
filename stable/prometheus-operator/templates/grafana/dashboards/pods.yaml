@@ -538,7 +538,7 @@ data:
 
                     },
                     "datasource": "$datasource",
-                    "hide": 2,
+                    "hide": {{ $.Values.grafana.defaultDashboardsClusterVariable }},
                     "includeAll": false,
                     "label": "cluster",
                     "multi": false,

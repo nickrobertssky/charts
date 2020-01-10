@@ -390,6 +390,10 @@ grafana:
   ##
   defaultDashboardsEnabled: true
 
+  # Set the "hide" value of the cluster variable on default dashboards.
+  # 2 = hidden, 1 = hide label, 0 = visible
+  defaultDashboardsClusterVariable: 2
+
   adminPassword: prom-operator
 
   ingress:
